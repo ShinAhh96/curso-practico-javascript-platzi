@@ -11,15 +11,48 @@
     <title>Calcular Figuras Geometricas</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li>Home</li>
+    <header class="container__header">
+        <div>
+            <picture><img src="#" alt="Mi logo"></picture>
+        </div>
+        <div>
+        <nav class="container__nav--geometric">
+            <ul class="nav__ul--geoemtric">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Portafolio</a></li>
+                <li><a href="#">Contactame</a></li>
             </ul>
         </nav>
+    </div>
     </header>
-    <main>
-        <h1>FIGURAS</h1>
+    <main class="content__main--geometric">
+        <section class="title__main--geometric">
+            <img src="/media/geometry.png" alt="imagen Geometrica" class="title__img--geometric">
+            <h1>FIGURAS GEOMETRICAS</h1>
+        </section>
+
+        <section class="section__main--geometric" id="">
+            <p>Bienvenidos a este peque&#241o desaf&#237o, donde estamos desarrollando los talleres del curso practico de JavaScript </p>
+            <p>Que queremos calcular Hoy?</p>
+        </section>
+        <section class="section__square">
+            <div class="section__square--title">
+                <img src="#" alt="Cuadrado">
+                <h2>Cuadrado</h2>
+               
+            </div>
+            <div class="section__input--square">
+                <p>Escribe cuanto miden los lados del Cuadrado:</p>
+                <input type="number" placeholder="Ingrese Medida" min="0" class="section__square__number" id="section__square__number--id">
+            </div>
+            <div class="section__square--buttons">
+                <button>Calcular Perimetro</button>
+                <button>Calcular Area</button>
+
+            </div>
+        </section>
+
+
 
     </main>
     <footer>

@@ -1,0 +1,101 @@
+:root{
+    --biggest-font-size:2.5rem;
+    --h1-font-size:2.5rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+    --body-font-two:  'Boing, Rubik, Sans Serif';
+
+}
+@font-face {
+    font-family: 'Boing, Rubik, Sans Serif';
+    src: url('/Fonts/boing-400.woff2')  ;
+    font-style: normal;
+    font-weight: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.50%;
+    font-family: var(--body-font-two);
+}
+.container__header{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    min-width: 320PX;
+    height: auto;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.678);
+}
+.nav__ul--geoemtric li{
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.6rem;
+}
+.nav__ul--geoemtric li a{
+    text-decoration: none;
+}
+.content__main--geometric{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    min-width: 320PX;
+    height: 100vh;
+    justify-content: center;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+.section__square__number::-webkit-outer-spin-button,.section__square__number::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+.title__main--geometric{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-width: 320PX;
+    height: 150px;
+    margin: 0 auto;
+    padding: 25px 10px 15px 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    border: 2PX solid black;
+}
+.title__main--geometric h1{
+    font-size: var(--h1-font-size);
+    font-weight: bold;
+   
+    width: 375px;
+    margin: 0 15px 0 0 ;
+    padding: 15px;
+    justify-content: center;
+}
+.title__img--geometric{
+    width: 60px;
+    height: 60px;
+}
+
+.section__main--geometric{
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.section__main--geometric p{
+    margin: 15px 0 15px 0;
+    padding: 10px;
+}
+.section__square{
+    display: inline-block;
+    width: 50%;
+    min-width: 320px;
+    margin: 0 auto 0 auto;
+    border: 2px solid black;
+}
