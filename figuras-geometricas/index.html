@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="/media/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" >
+    <link rel="stylesheet" href="./tabletfiguras.css" media="screen and (min-width: 600px)">
+    <link rel="stylesheet" href="./desktopfiguras.css" media="screen and (min-width: 900px)">
 
     <title>Calcular Figuras Geometricas</title>
 </head>
@@ -27,33 +29,121 @@
     </header>
     <main class="content__main--geometric">
         <section class="title__main--geometric">
+            <div>
             <img src="/media/geometry.png" alt="imagen Geometrica" class="title__img--geometric">
+        </div>
             <h1>FIGURAS GEOMETRICAS</h1>
         </section>
-
         <section class="section__main--geometric" id="">
             <p>Bienvenidos a este peque&#241o desaf&#237o, donde estamos desarrollando los talleres del curso practico de JavaScript </p>
             <p>Que queremos calcular Hoy?</p>
         </section>
+        <div class="container__square">
         <section class="section__square">
             <div class="section__square--title">
-                <img src="#" alt="Cuadrado">
+                <img src="/media/cube.png" alt="Cuadrado">
                 <h2>Cuadrado</h2>
-               
             </div>
-            <div class="section__input--square">
-                <p>Escribe cuanto miden los lados del Cuadrado:</p>
+            <form class="section__input--square">
+                <label for="section__square__number--id"><p>Escribe cuanto miden los lados del Cuadrado:</p></label>
                 <input type="number" placeholder="Ingrese Medida" min="0" class="section__square__number" id="section__square__number--id">
-            </div>
-            <div class="section__square--buttons">
-                <button>Calcular Perimetro</button>
-                <button>Calcular Area</button>
+                <select name="" id="listamedidaCuadrado" class="listmedidaclass">
+                    <option value="mm">mm</option>
+                    <option value="cm">cm</option>
+                    <option value="km">km</option>
+                </select>
+                <div class="section__square--buttons">
+                    <button type="button" onclick="calcularPerimetroCuadrado()">Calcular Perimetro</button>
+                    <button type="button" onclick="calcularAreaCuadrado()">Calcular Area</button>
+                </div>
+                <div class="section__square--resultclass">
+                    <p>Resultado</p>
+                <p id="section__square--result"></p>
 
-            </div>
+                </div>
+            </form>
         </section>
+<!-- TRIANGULE -->
+        <section class="section__square section__square--triangle">
+        <div class="section__square--title">
+        <img src="/media/triangle.png" alt="Triangulo">
+             <h2>Triangulo</h2>
+        </div>
+             <form class="section__input--square--triangule">
+                 <label for="section__square__number--id"><p>Escribe cuanto miden los lados del Triangulo:</p></label>
+        <input type="number" placeholder="Ingrese Lado 1" min="0" class="section__square__number" id="section__square__number--id--triangule1">
+        <input type="number" placeholder="Ingrese Lado 2" min="0" class="section__square__number" id="section__square__number--id--triangule2">
+        <select name="listmedida" id="listmedidaidtriangle" class="listmedidaclass">
+            <option value="mm">mm</option>
+            <option value="cm">cm</option>
+            <option value="km">km</option>
+        </select>
+        <input type="number" placeholder="Ingrese Base" min="0" class="section__square__number" id="section__square__number--id--triangule3">
+        <div class="section__square--buttons">
+            <button type="button" onclick="calcularPerimetroTriangulo()">Calcular Perimetro</button>
+            <button type="button" onclick="calcularAreaTriangulo()">Calcular Area</button>
+        </div>
+        <div class="section__square--resultclass">
+            <p>Resultado</p>
+        <p id="section__square--result--triangle"></p>
 
+        </div>
+    </form>
+</section>
+<!-- CIRCLE -->
 
+<section class="section__square section__square--triangle">
+    <div class="section__square--title">
+    <img src="/media/icono-circulo.png" alt="Triangulo">
+         <h2>Circulo</h2>
+    </div>
+         <form class="section__input--square--triangule">
+             <label for="section__square__number--id"><p>Escribe cuanto miden el Radio del Circulo:</p></label>
+    <input type="number" placeholder="Ingrese Radio" min="0" class="section__square__number" id="section__square__number--id--circle">
+    <select name="listmedida" id="listmedidaidCircle" class="listmedidaclass">
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="km">km</option>
+    </select>
+    <div class="section__square--buttons">
+        <button type="button" onclick="calcularPerimetroCirculo()">Calcular Perimetro</button>
+        <button type="button" onclick="calcularAreaCirculo()">Calcular Area</button>
+    </div>
+    <div class="section__square--resultclass">
+        <p>Resultado</p>
+    <p id="section__square--result--circle"></p>
+ 
+    </div>
+</form>
+</section>
+<!-- RECTANGLE -->
 
+<section class="section__square section__square--triangle">
+    <div class="section__square--title">
+    <img src="/media/rectnagulo.png" alt="Triangulo">
+         <h2>Rectangulo</h2>
+    </div>
+         <form class="section__input--square--triangule">
+             <label for="section__square__number--id"><p>Escribe cuanto miden los lados del Triangulo:</p></label>
+    <input type="number" placeholder="Ingrese Altura" min="0" class="section__square__number" id="section__square__number--id--rectangleh">
+    <input type="number" placeholder="Ingrese Base" min="0" class="section__square__number" id="section__square__number--id--rectangleb">
+    <select name="listmedida" id="listmedidaidrectangle" class="listmedidaclass">
+        <option value="mm">mm</option>
+        <option value="cm">cm</option>
+        <option value="km">km</option>
+    </select>
+    <div class="section__square--buttons">
+        <button type="button" onclick="calcularPerimetroRectangulo()">Calcular Perimetro</button>
+        <button type="button" onclick="calcularAreaTriangulo()">Calcular Area</button>
+    </div>
+</form>
+<div class="section__square--resultclass">
+    <p>Resultado</p>
+<p id="section__square--result--rectangle" class="section__square--resultclass"></p>
+</div>
+</section>
+
+        </div>
     </main>
     <footer>
         <section><p>pie de pagina</p></section>

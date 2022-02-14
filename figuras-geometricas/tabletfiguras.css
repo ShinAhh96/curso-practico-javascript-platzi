@@ -1,0 +1,23 @@
+
+.container__square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+}
+.section__main--geometric{
+justify-content: center;
+text-align: center;
+justify-items: center;
+align-items: center;
+margin: auto;
+}
+.section__main--geometric p{
+    width: 550px;
+}
+.section__square--triangle{
+    margin-left: 25px;
+    margin-right: 25px;
+}

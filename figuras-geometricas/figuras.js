@@ -1,59 +1,63 @@
-console.group("Cuadrados");
-/* const ladoCuadrado = 5;
-console.log("Los lados del cuadrado miden: " + ladoCuadrado+ " CM"); */
-/* const perimetroCuadrado = ladoCuadrado*4;
-console.log("El perimetro del cuadrado es: " + perimetroCuadrado + " CM"); */
-/* const areCuadrado = ladoCuadrado*ladoCuadrado;
-console.log("El area del cuadrado es: " + areCuadrado + " CM Cuadrados"); */
-/* Creando funcion para tomar las medidas */
 function perimetroCuadrado(lado){
-    return console.log(`El perimetro del Cuadrado es: ${lado*4} cm`);
+    return lado*4
 }
 function areaCuadrado(lado){
     return lado**2;
-    return console.log(`El area del Cuadrado es: ${lado**2} cm`);
 }
-console.groupEnd;
+function calcularPerimetroCuadrado(){
+    const input = document.getElementById("section__square__number--id");
+    const result = document.getElementById("section__square--result");
+    const medida = document.getElementById("listamedidaCuadrado");
+    const unitValue = medida.value;
+    const value = Number(input.value);
+    const perimetro = perimetroCuadrado(value);
+    result.innerText = `El perímetro del Cuadrado es: ${perimetro} ${unitValue}`;
+}
+function calcularAreaCuadrado(){
+    const input = document.getElementById("section__square__number--id");
+    const result = document.getElementById("section__square--result");
+    const medida = document.getElementById("listamedidaCuadrado");
+    const unitValue = medida.value;
+    const value = Number(input.value);
+    const area = areaCuadrado(value);
+    result.innerText = `El Area del Cuadrado es: ${area}${unitValue}²`;
+}
 /* codigo del triangulo */
-console.group("Triangulos");
-/* const ladoTriangulo1 = 6;
-const ladoTriangulo2 = 6;
-const ladoTriangulo3 = 4;
-console.log("Los lados del Trignagulo miden: " + ladoTriangulo1 + " CM, "+ ladoTriangulo2 + " CM, " + ladoTriangulo3 + " CM");
-const baseTriangulo = 4;
-console.log("La base del Triangulo mide: " + baseTriangulo + " CM");
-const alturaTriangulo = 5.5;
-console.log("La altura de Triangulo mide: " + alturaTriangulo + " CM");
-const perimetroTriangulo = ladoTriangulo1 + ladoTriangulo2 + baseTriangulo;
-console.log("El perimetro del Triangulo mide: " + perimetroTriangulo + " CM");
-const areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
-console.log("El Area del Triangulo mide: " + areaTriangulo + "CM^2"); */
-
+function calcularAlturaTriangulo(lado1, lado2, base){
+    if(lado1 === lado2){
+        return Math.sqrt((lado1 * lado1) - ((base / 2) * (base / 2)))
+    } else{
+        return (lado1 * lado2) / base
+    }
+}
 function perimetroTriangulo(lado1, lado2, base){
-    return console.log(`El perimetro del Triangulo es: ${lado1+lado2+base} cm`);
+    return lado1+lado2+base;
 }
 function areaTriangulo(base, altura){
-    return console.log(`El area del Triangulo es: ${(base*altura)/2} cm`);
+    return (base*altura)/2;
 }
-console.groupEnd;
-/* codigo del Circulo */
+/* calculo del area y perimetro del  triangulo */
+function calcularPerimetroTriangulo(){
+    const input1 = document.getElementById("section__square__number--id--triangule1");
+    const input2 = document.getElementById("section__square__number--id--triangule2");
+    const input3 = document.getElementById("section__square__number--id--triangule3");
+    const result = document.getElementById("section__square--result--triangle");
+    const valueText = document.getElementById("listmedidaidtriangle");
+    const perimetro = perimetroTriangulo(Number(input1.value),Number(input2.value),Number(input3.value));
+    result.innerText = (`El Perimetro del Triangulo es: ${perimetro} ${valueText.value}`);
+}
+function calcularAreaTriangulo(){
+    const input1 = document.getElementById("section__square__number--id--triangule1");
+    const input2 = document.getElementById("section__square__number--id--triangule2");
+    const input3 = document.getElementById("section__square__number--id--triangule3");
+    const result = document.getElementById("section__square--result--triangle");
+    const valueText = document.getElementById("listmedidaidtriangle");
+    let areaT = calcularAlturaTriangulo(Number(input1.value),Number(input2.value),Number(input3.value));
+    let area = areaTriangulo(areaT,Number(input3.value));
+    result.innerText = (` El Area del Triangulo es: ${area} ${valueText.value}`);
+}
 
-/* console.group("Circulos");
-// PI
-const pi = Math.PI;
-console.log(`PI es igual a: ${pi}`);
-// DIAMETRO
-//RADIO
-const radioCirculo = 4;
-console.log(`El Radio del Circulo es igual a: ${radioCirculo} CM`);
-const diametroCirculo = radioCirculo * 2;
-console.log(`El diametro del Circulo es igual a: ${diametroCirculo} CM`);
-//CIRCUFERENCIA
-const perimetroCirculo = diametroCirculo*pi;
-console.log(`La circuferencia del Circulo es igual a: ${perimetroCirculo} CM`);
-//AREA
-const areaCirculo = (radioCirculo*radioCirculo)*pi;
-console.log(`El Area del Circulo es igual a: ${areaCirculo} CM^2`); */
+/* Codigo del Circulo */
 
 function diametroCirculo(radio){
     return radio*2;
@@ -64,6 +68,43 @@ function perimetroCirculo(radio){
     return console.log(`El perimetro del Circulo es: ${perimetro} cm`);
 }
 function areaCirculo(radio){
-    return console.log(`El area del Circulo es: ${Math.floor((radio**2)*Math.PI) } cm^2`);
+    return Math.floor((radio**2)*Math.PI);
 }
-console.groupEnd;
+
+function calcularPerimetroCirculo(){
+    const input = document.getElementById("section__square__number--id--circle");
+    const result = document.getElementById("section__square--result--circle");
+    const medida = document.getElementById("listmedidaidCircle");
+    const unitValue = medida.value;
+    const diametro =diametroCirculo(Number(input.value));
+    result.innerText = `El Perimetro del Cuadrado es: ${diametro}${unitValue}`;
+}
+function calcularAreaCirculo(){
+    const input = document.getElementById("section__square__number--id--circle");
+    const result = document.getElementById("section__square--result--circle");
+    const medida = document.getElementById("listmedidaidCircle");
+    const unitValue = medida.value;
+    const area = areaCirculo(Number(input.value));
+    result.innerText = `El Area del Cuadrado es: ${area}${unitValue}²`;
+}
+
+/* Codigo del rectangulo */
+function perimetroRectangulo(b,h){
+    let p =((b*2)+(h*2));
+    return p;
+}
+
+function calcularPerimetroRectangulo(){
+    const inputh = document.getElementById("section__square__number--id--rectangleh");
+    const inputb = document.getElementById("section__square__number--id--rectangleb");
+    const result = document.getElementById("section__square--result--rectangle");
+    const medida = document.getElementById("listmedidaidCircle");
+    const unitValue = medida.value;
+    const perimetro = perimetroRectangulo(Number(inputb.value),Number(inputh.value));
+    result.innerText = `El Perimetro del Cuadrado es: ${perimetro}${unitValue}²`;
+}
+function calcularAreaRectangulo (){
+
+}
+
+
